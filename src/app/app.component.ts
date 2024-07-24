@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'time-glide-frontend';
+  nombre: string = 'pablo';
+  saludar() {
+    this.nombre = 'adrian';
+    console.log(this.nombre);
+
+  }
 }
