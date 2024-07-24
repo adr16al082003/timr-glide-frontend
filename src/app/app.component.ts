@@ -5,11 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  nombre: string = 'pablo';
-  saludar() {
-    this.nombre = 'adrian';
-    console.log(this.nombre);
-
-  }
-}
+export class AppComponent { }

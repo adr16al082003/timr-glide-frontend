@@ -10,12 +10,12 @@ import { AppRoutes } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
-],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
