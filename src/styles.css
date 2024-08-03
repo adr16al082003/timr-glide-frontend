@@ -2,3 +2,9 @@
 @import '/node_modules/primeflex/primeflex.css';
 @import '/node_modules/primeflex/themes/primeone-dark.css';
 
+:root {
+  --blanco: #E0E0E0;
+  --azul-opacidad: #184463;
+  --bg-menu: #003053;
+  --bg-body: #C7E1FF;
+}

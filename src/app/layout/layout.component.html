@@ -1,0 +1,23 @@
+<div class="menu-dashboard">
+  <!-- TOP MENU -->
+  <div class="top-menu">
+      <div class="logo " alt="img">
+      <img src="./img/logo.svg" alt="">
+      <span>TuMejorWeb</span>
+    </div>     <div class="toggle" (click)="openMenu()">
+      <i class='bx bx-menu'></i>
+    </div>
+  </div>
+  <!-- INPUT SEARCH
+  <div class="input-search">
+    <i class='bx bx-search'></i>
+    <input type="text" class="input" placeholder="Buscar">
+  </div> -->
+  <!-- MENU -->
+  <div class="menu" *ngFor="let menu of menus ">
+    <div (click)="openMenu(true)" class="enlace">
+      <i [class]="menu.icon"></i>
+      <span>{{menu.label}}</span>
+    </div>
+  </div>
+</div>

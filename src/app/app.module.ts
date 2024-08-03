@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app-routing.module';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
 
   ],
   imports: [

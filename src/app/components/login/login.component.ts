@@ -19,13 +19,13 @@ import { AlertService } from 'src/app/services/alert.service';
 export class LoginComponent {
 
   private _alertService = inject(AlertService);
-  constructor(private loginService: LoginService) { }
 
   login: User = {
     user: '',
     pass: '',
     recordar: false
   }
+  constructor(private loginService: LoginService) { }
 
   validateUser() {
     this.loginService.validateUser(this.login).subscribe({
