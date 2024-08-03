@@ -29,14 +29,14 @@ export class AlertService {
     });
   }
 
-  fails(text = ""){
+  fails(title = "", text = ""){
     Swal.fire({
       position: "top-end",
       icon: "error",
-      title: "Opsss..",
+      title: title,
       text: text,
       showConfirmButton: false,
-      timer: 2500
+      timer: 2500,
     });
   }
 
@@ -44,10 +44,21 @@ export class AlertService {
     Swal.fire({
       position: "top-end",
       icon: "warning",
-      title: "Opsss..",
+      title: "Alerta",
       text: text,
       showConfirmButton: false,
-      timer: 2500
+      timer: 2500,
+    });
+  }
+
+  info(title = "", text = ""){
+    Swal.fire({
+      position: "top-end",
+      icon: "info",
+      title: title,
+      text: text,
+      showConfirmButton: false,
+      timer: 2500,
     });
   }
 

@@ -31,28 +31,12 @@ export class LoginComponent {
     this.loginService.validateUser(this.login).subscribe({
       next: (user) => {
         console.log(user);
-        this.sesion();
+        this._alertService.sesion();
       },
       error: (error) => {
         console.log(error);
-        this.fails("Usuario o Clave Invalida");
+        this._alertService.fails("Usuario o Clave Invalida");
       }
     })
-  }
-
-  sesion(){
-    this._alertService.sesion();
-  }
-
-  fails(text = ""){
-    this._alertService.fails(text);
-  }
-
-  exito(text = ""){
-    this._alertService.exito(text);
-  }
-
-  warning(text = ""){
-    this._alertService.warning(text);
   }
 }
