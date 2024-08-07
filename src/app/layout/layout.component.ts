@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { menuDashboard } from './menu';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../components/header/header.component";
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })

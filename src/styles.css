@@ -4,7 +4,15 @@
 
 :root {
   --blanco: #E0E0E0;
-  --azul-opacidad: #184463;
-  --bg-menu: #003053;
+  --custom-primary-color-opacidad: #184463;
+  --custom-primary-color: #003053;
   --bg-body: #C7E1FF;
 }
+
+.bg-custom-primary-color{
+  background-color: var(--custom-primary-color);
+  color: var(--blanco);
+}
+
+
+

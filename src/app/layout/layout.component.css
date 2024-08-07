@@ -3,12 +3,7 @@
 
 /* VARIABLES */
 
-:root {
-    --blanco: #E0E0E0;
-    --azul-opacidad: #184463;
-    --bg-menu: #003053;
-    --bg-body: #C7E1FF;
-}
+
 
 /* GENERALES */
 /* 
@@ -23,37 +18,13 @@ body {
     color: var(--blanco);
 } */
 
-/* nav*/
-
-nav{
-    background-color: var(--bg-menu);
-}
-
-strong{
-    color: var(--blanco);
-    margin-left: 20px;
-    font-size: 30px;
-}
-
-details {
-    background-color: var(--bg-menu);
-}
-.dropdown summary{
-background-color: var(--bg-menu);
-color: var(--bg-body);
-}
-
-
-.dropdown summary:hover{
-    background-color: var(--azul-opacidad);
-}
 
 /* LAYOUT */
 
 .menu-dashboard {
     max-width: 100px;
     height: 100vh;
-    background: var(--bg-menu);
+    background: var(--custom-primary-color);
     padding: 20px;
     transition: max-width .3s ease;
     color: #E0E0E0;
@@ -137,7 +108,7 @@ color: var(--bg-body);
 }
 
 .menu .enlace:hover {
-    background: var(--azul-opacidad);
+    background: var(--custom-primary-color-opacidad);
 }
 
 .menu .enlace i {
