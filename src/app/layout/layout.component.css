@@ -23,10 +23,35 @@ body {
     color: var(--blanco);
 } */
 
+/* nav*/
+
+nav{
+    background-color: var(--bg-menu);
+}
+
+strong{
+    color: var(--blanco);
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+details {
+    background-color: var(--bg-menu);
+}
+.dropdown summary{
+background-color: var(--bg-menu);
+color: var(--bg-body);
+}
+
+
+.dropdown summary:hover{
+    background-color: var(--azul-opacidad);
+}
+
 /* LAYOUT */
 
 .menu-dashboard {
-    max-width: 150px;
+    max-width: 100px;
     height: 100vh;
     background: var(--bg-menu);
     padding: 20px;
