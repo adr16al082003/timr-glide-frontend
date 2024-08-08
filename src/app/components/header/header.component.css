@@ -7,14 +7,14 @@
 }
 
 .dropdown summary {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     padding: 0px 10px 0px 0px;
     /* Altura fija para hacer el cuadrado */
     display: flex;
     /* Centra el texto */
-    align-items: start;
+    align-items: end;
     /* Centra verticalmente */
-    justify-content: start;
+    justify-content: end;
     /* Centra horizontalmente */
 }
