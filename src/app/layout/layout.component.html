@@ -1,27 +1,44 @@
-
-<app-header></app-header>
-<!--menu lateral-->
-<div class="menu-dashboard">
-  <!-- TOP MENU -->
-  <div class="top-menu">
+<div class="flex">
+  <!--MENU LATERAL-->
+  <div class="menu-dashboard">
+    <!-- TOP MENU -->
+    <div class="top-menu">
       <div class="logo " alt="img">
-      <img src="./img/logo.svg" alt="">
-      <span>TuMejorWeb</span>
-    </div>     <div class="toggle" (click)="openMenu()">
-      <i class='bx bx-menu'></i>
+        <img src="./img/logo.svg" alt="">
+        <span>Time Glide</span>
+      </div>
+      <div class="toggle" (click)="openMenu()">
+        <i class='bx bx-menu'></i>
+      </div>
     </div>
-  </div>
-  <!-- INPUT SEARCH
+    <!-- INPUT SEARCH
   <div class="input-search">
     <i class='bx bx-search'></i>
     <input type="text" class="input" placeholder="Buscar">
   </div> -->
-  <!-- MENU -->
-  <div class="menu" *ngFor="let menu of menus ">
-    <div (click)="openMenu(true)" class="enlace">
-      <i [class]="menu.icon"></i>
-      <span>{{menu.label}}</span>
+    <!-- MENU -->
+    <div class="menu" *ngFor="let menu of menus ">
+      <div (click)="openMenu(true)" class="enlace">
+        <i [class]="menu.icon"></i>
+        <span>{{menu.label}}</span>
+      </div>
     </div>
   </div>
-</div>
 
+  <div class="flex flex-column w-full">
+    <!-- HEADER -->
+    <app-header></app-header>
+    <!-- LAYOUT -->
+    <div class="field">
+      <label for="firstname1">Usuario</label>
+      <input id="firstname1" type="text"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field">
+      <label for="lastname1">Contraseña</label>
+      <input id="lastname1" type="text"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+  </div>
+
+</div>
