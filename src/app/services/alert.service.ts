@@ -8,22 +8,14 @@ export class AlertService {
 
   constructor() { }
 
-  sesion(){
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Iniciado con exito",
-      text: "Bienvenido",
-      showConfirmButton: false,
-      timer: 1500
-    });
-  }  
+  
 
-  exito(text = ""){
+  exito(title: string ,text = ""){
     Swal.fire({
-      position: "top-end",
+      position: "center",
       icon: "success",
-      title: text,
+      title: title,
+      text: text,
       showConfirmButton: false,
       timer: 2500
     });

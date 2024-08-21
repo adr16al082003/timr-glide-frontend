@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { timer } from 'rxjs';
 import { AlertService } from 'src/app/services/alert.service';
+import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   imports: [FormsModule, CommonModule, HttpClientModule],
@@ -18,20 +20,42 @@ import { AlertService } from 'src/app/services/alert.service';
 })
 export class LoginComponent {
 
-  private _alertService = inject(AlertService);
+  ;
+  
 
   login: User = {
     user: '',
     pass: '',
     recordar: false
   }
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService, 
+    private _alertService: AlertService,
+    private router: Router){ }
+
+    ngOnInit(): void {
+      if (localStorage.getItem('recordar')) {
+        let user = JSON.parse(localStorage.getItem('recordar') as string);
+      
+        this.login.user = user.user
+        this.login.recordar = user.recordar
+      
+      }
+    }
 
   validateUser() {
     this.loginService.validateUser(this.login).subscribe({
-      next: (user) => {
-        console.log(user);
-        this._alertService.sesion();
+      next: (user:any) => {
+        if( this.login.recordar){
+          localStorage.setItem('recordar', JSON.stringify({
+            user: this.login.user,
+            recordar: this.login.recordar
+          }));
+        }else{
+          localStorage.removeItem('recordar');
+        }
+        this._alertService.exito(`Bienvenido ${user[0].nombre}`);
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.log(error);
