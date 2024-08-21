@@ -1,26 +1,30 @@
-<div class="contenedor flex flex-column border-blue-400 border-solid w-7 border-round ">
-    <div class="flex justify-content-between py-1 px-1 ">
-        <h3>Usuarios</h3>
-        <input class=" w-3" type="search" placeholder="buscar">
-    </div>
-    <div class="flex flex-column py-2 px-3">
-        <div class="flex justify-content-between text-white">
-            <h4>Id</h4>
-            <h4>Nombre</h4>
-            <h4>Cargo</h4>
-            <h4>Acciones</h4>
-        </div>
-        <div class="flex justify-content-between">
-            <p>1</p>
-            <p>Adrian</p>
-            <p>Admin</p>
-            <app-sambox></app-sambox>
-        </div>
-        <div class="flex justify-content-between">
-            <p>2</p>
-            <p>Louis</p>
-            <p>Admin</p>
-            <app-sambox></app-sambox>
-        </div>
-    </div>
+<div class="contenedor flex flex-column shadow-6 w-7 border-round ">
+	<div class="flex bg-custom-primary-color align-items-center justify-content-between py-3 px-3 ">
+		<p class="text-white text-4xl font-medium">Usuarios</p>
+		<div>
+			<input class="m-1 border-round-sm" type="search" placeholder="buscar">
+		</div>
+	</div>
+	<div class="flex flex-column py-2 px-3">
+		<!-- HEADER -->
+		<div class="flex justify-content-between  text-white">
+			<h4>Id</h4>
+			<h4>Nombre</h4>
+			<h4>Cargo</h4>
+			<h4>Acciones</h4>
+		</div>
+		<!-- BODY -->
+		<div class="flex justify-content-between">
+			<p>1</p>
+			<p>Adrian</p>
+			<p>Admin</p>
+			<app-sambox></app-sambox>
+		</div>
+		<div class="flex justify-content-between">
+			<p>2</p>
+			<p>Louis</p>
+			<p>Admin</p>
+			<app-sambox></app-sambox>
+		</div>
+	</div>
 </div>
