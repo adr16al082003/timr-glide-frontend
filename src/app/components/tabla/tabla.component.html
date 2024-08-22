@@ -1,6 +1,6 @@
 <div class="contenedor flex flex-column shadow-6 w-7 border-round ">
 	<div class="flex bg-custom-primary-color align-items-center justify-content-between py-3 px-3 ">
-		<p class="text-white text-4xl font-medium">Usuarios</p>
+		<p class="text-white text-4xl font-medium">{{title}}</p>
 		<div>
 			<input class="m-1 border-round-sm" type="search" placeholder="buscar">
 		</div>
@@ -8,23 +8,13 @@
 	<div class="flex flex-column py-2 px-3">
 		<!-- HEADER -->
 		<div class="flex justify-content-between  text-white">
-			<h4>Id</h4>
-			<h4>Nombre</h4>
-			<h4>Cargo</h4>
-			<h4>Acciones</h4>
+			<h4  *ngFor="let colum of colums">{{colum.label}}</h4>
+            <h4>Acciones</h4>
 		</div>
 		<!-- BODY -->
-		<div class="flex justify-content-between">
-			<p>1</p>
-			<p>Adrian</p>
-			<p>Admin</p>
-			<app-sambox></app-sambox>
-		</div>
-		<div class="flex justify-content-between">
-			<p>2</p>
-			<p>Louis</p>
-			<p>Admin</p>
-			<app-sambox></app-sambox>
+		<div *ngFor="let d of data" class="flex justify-content-between">
+            <p *ngFor="let colum of colums">{{d[colum.key]}}</p>
+			<app-sambox (btn_delete)="delete.emit(d)" (btn_edit)="edit.emit(d)"></app-sambox>
 		</div>
 	</div>
 </div>

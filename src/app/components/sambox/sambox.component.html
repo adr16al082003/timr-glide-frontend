@@ -1,5 +1,6 @@
 <div class="flex gap-1">
-	<button class="button-sm bg-custom-primary-color border-custom-primary-color"><i class=" bx bx-edit-alt "></i></button>
-	<button class="button-sm bg-red-500  border-red-500"> <i class="bx bx-trash "></i></button>
+	<button (click)="btn_delete.emit()" class="button-sm bg-red-500  border-red-500"> <i class="bx bx-trash "></i></button>
+	<button (click)="btn_edit.emit()" class="button-sm bg-custom-primary-color border-custom-primary-color"><i class=" bx bx-edit-alt "></i></button>
 	<!-- <button class="button-sm bg-green-600 border-green-600 "><i class="bx bx-id-card "></i></button> -->
 </div>
+

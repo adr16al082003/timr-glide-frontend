@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-sambox',
@@ -10,4 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class SamboxComponent {
 
+  @Output() btn_edit: EventEmitter<any> = new EventEmitter();
+
+  @Output() btn_delete: EventEmitter<any> = new EventEmitter();
 }
+
