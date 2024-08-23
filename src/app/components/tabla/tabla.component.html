@@ -1,4 +1,4 @@
-<div class="contenedor flex flex-column shadow-6 w-7 border-round ">
+<div class=" flex flex-column shadow-6 w-7 border-round ">
 	<div class="flex bg-custom-primary-color align-items-center justify-content-between py-3 px-3 ">
 		<p class="text-white text-4xl font-medium">{{title}}</p>
 		<div>
@@ -8,12 +8,12 @@
 	<div class="flex flex-column py-2 px-3">
 		<!-- HEADER -->
 		<div class="flex justify-content-between  text-white">
-			<h4  *ngFor="let colum of colums">{{colum.label}}</h4>
-            <h4>Acciones</h4>
+			<h4 *ngFor="let colum of colums">{{colum.label}}</h4>
+			<h4>Acciones</h4>
 		</div>
 		<!-- BODY -->
 		<div *ngFor="let d of data" class="flex justify-content-between">
-            <p *ngFor="let colum of colums">{{d[colum.key]}}</p>
+			<p *ngFor="let colum of colums">{{d[colum.key]}}</p>
 			<app-sambox (btn_delete)="delete.emit(d)" (btn_edit)="edit.emit(d)"></app-sambox>
 		</div>
 	</div>

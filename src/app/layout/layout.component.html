@@ -1,21 +1,16 @@
 <div class="flex">
   <!--MENU LATERAL-->
-  <div class="menu-dashboard">
+  <div class="flex flex-column gap-2 bg-custom-primary-color config-sidebar">
     <!-- TOP MENU -->
-    <div class="top-menu">
-      <div class="logo " alt="img">
-        <img src="./img/logo.svg" alt="">
-        <span>Time Glide</span>
-      </div>
-      <div class="toggle" (click)="openMenu()">
-        <i class='bx bx-menu'></i>
-      </div>
+    <div class="flex justify-content-center pt-4">
+      <i class='bx bx-menu text-3xl'></i>
     </div>
     <!-- MENU -->
-    <div class="menu" *ngFor="let menu of menus ">
-      <div (click)="openMenu(true)" class="enlace">
-        <i [class]="menu.icon"></i>
-        <span>{{menu.label}}</span>
+    <div>
+      <div *ngFor="let menu of menus "
+        class="action-sidebar  flex flex-column text-center align-content-center justify-content-center gap-2 ">
+        <i [class]="menu.icon" class="text-2xl"></i>
+        <span style="font-size: 10px;" class="font-bold">{{menu.label|uppercase}}</span>
       </div>
     </div>
   </div>
@@ -24,10 +19,9 @@
     <!-- HEADER -->
     <app-header></app-header>
     <!-- LAYOUT -->
-    <div>
-      <app-tabla [title]="'Usuarios'" [colums]="columsUser" [data]="userListar" (delete)="buttomEvent($event)"
-        (edit)="buttomEvent($event)"></app-tabla>
-    </div>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
   </div>
 
 </div>

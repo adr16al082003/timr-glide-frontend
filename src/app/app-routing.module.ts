@@ -1,20 +1,17 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { SamboxComponent } from './components/sambox/sambox.component';
 import { LayoutComponent } from './layout/layout.component';
 
+
 export const AppRoutes: Routes = [
-  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   {
-    path: 'dashboard',
+    path: '',
     component: LayoutComponent,
-    children: [],
-  },
-  {
-    path: 'sambox',
-    component: SamboxComponent,
-  },
+    children: [
+      { path: 'app', loadChildren: () => import('./modules/time-glide.module').then(m => m.TimeGlideModule) }
+    ]
+  }
 
 ];
 

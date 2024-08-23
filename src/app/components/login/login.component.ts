@@ -55,7 +55,7 @@ export class LoginComponent {
           localStorage.removeItem('recordar');
         }
         this._alertService.exito(`Bienvenido ${user[0].nombre}`);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/app']);
       },
       error: (error) => {
         console.log(error);
