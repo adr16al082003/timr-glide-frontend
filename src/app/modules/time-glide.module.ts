@@ -7,7 +7,6 @@ import { LayoutRoutes } from './time-glide.routing';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { TablaComponent } from "../components/tabla/tabla.component";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HeaderFormComponent } from "../components/header-form/header-form.component";
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { HeaderFormComponent } from "../components/header-form/header-form.compo
     CommonModule,
     FormsModule,
     RouterModule.forChild(LayoutRoutes),
-    TablaComponent,
-    HeaderFormComponent
+    TablaComponent
 ]
 })
 export class TimeGlideModule { }
