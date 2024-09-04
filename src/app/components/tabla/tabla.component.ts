@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { SamboxComponent } from "../sambox/sambox.component";
 import { Colum } from 'src/app/models/configForms.model';
 import { FormsModule } from '@angular/forms';
+import { HeaderFormComponent } from "../header-form/header-form.component";
+
 
 
 @Component({
-  imports: [CommonModule, SamboxComponent, FormsModule],
+  imports: [CommonModule, SamboxComponent, FormsModule, HeaderFormComponent],
   standalone: true,
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
@@ -14,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TablaComponent {
 
-  @Input() title: string = 'Titulo'
+  @Input() title: string = 'Titulo';
 
   @Input() colums:  Colum[] = [new Colum()];
 
@@ -23,4 +25,9 @@ export class TablaComponent {
   @Output() edit: EventEmitter<any> = new EventEmitter();
 
   @Output() delete: EventEmitter<any> = new EventEmitter();
+
+
+  agregar(E:any){
+    console.log(E);
+  }
 }

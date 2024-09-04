@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Colum } from '../models/configForms.model';
 import { menuDashboard } from './menu';
 
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -19,6 +20,7 @@ export class LayoutComponent implements OnInit {
     { label: 'nombre', key:"nombre" },
     { label: 'cargo', key:"rol" },
   ]
+
 
   userListar: any[]= [
     { id: 1, nombre: 'Juan', rol: 'Gerente' },
