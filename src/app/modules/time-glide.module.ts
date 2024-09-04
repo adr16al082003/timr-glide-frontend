@@ -7,6 +7,8 @@ import { LayoutRoutes } from './time-glide.routing';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { TablaComponent } from "../components/tabla/tabla.component";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ModalDinamicComponent } from "../components/modal-dinamic/modal-dinamic.component";
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     CommonModule,
     FormsModule,
     RouterModule.forChild(LayoutRoutes),
-    TablaComponent
+    TablaComponent,
+    ModalDinamicComponent
 ]
 })
 export class TimeGlideModule { }
