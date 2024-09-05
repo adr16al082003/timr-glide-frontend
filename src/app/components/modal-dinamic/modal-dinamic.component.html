@@ -1,32 +1,20 @@
 <dialog open>
     <article data-theme="dark">
-        <h2>{{title}}</h2>
-        <div
-            class=" formgrid grid " >
-            <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" class=" appearance-none outline-none focus:border-primary w-full h-2rem ">
-            </div>
-            <div>
-                <label for="Usuario">Usuario</label>
-                <input type="text" class=" appearance-none outline-none focus:border-primary w-full h-2rem ">
-            </div>
-            <div>
-                <label for="cargo">cargo</label>
-                <select id="cargo"
-                    class="w-full text-base  p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary">
-                    <option>Administrador</option>
-                    <option>Operador</option>
-                </select>
-            </div>
+        <header>
+            <button aria-label="Close" rel="prev"></button>
+            <p>
+                <strong>{{title}}</strong>
+            </p>
+        </header>
+        <div class="p-3">
+            <ng-content select="[modal-body]"></ng-content>
         </div>
         <footer>
-            <button (click)="btn_conf.emit()">Confirm</button>
             <button (click)="btn_cerrar.emit()" class="bg-red-500">
-                Cancel
+                Cancelar
             </button>
-            <button class="bg-green-500" (click)="btn_clean.emit()">Clean</button>
+            <button class="bg-yellow-500" (click)="btn_clean.emit()">Descartar</button>
+            <button (click)="btn_conf.emit()">Confirmar</button>
         </footer>
     </article>
 </dialog>
-
