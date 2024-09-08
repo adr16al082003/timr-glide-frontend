@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from "./components/header/header.component";
 import { TablaComponent } from "./components/tabla/tabla.component";
 import { LayoutComponent } from './layout/layout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LayoutComponent } from './layout/layout.component';
 
   ],
   imports: [
+    HttpClientModule, 
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
     HeaderComponent,

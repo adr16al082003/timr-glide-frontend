@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  imports: [ CommonModule],
+  imports: [CommonModule],
   standalone: true,
   selector: 'app-modal-dinamic',
   templateUrl: './modal-dinamic.component.html',
@@ -11,34 +11,21 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ModalDinamicComponent {
 
+  @Input() mostrarModal = false;
+
   @Input() title: string = 'Registro de Usuario';
-  
-  @Output() btn_cerrar : EventEmitter<any> = new EventEmitter();
 
-  @Output() btn_conf : EventEmitter<any> = new EventEmitter();
+  @Output() btn_cerrar: EventEmitter<any> = new EventEmitter();
 
-  @Output() btn_clean : EventEmitter<any> = new EventEmitter();
+  @Output() btn_conf: EventEmitter<any> = new EventEmitter();
 
-  cerrar(C:String){
-    console.log('Cerrar');
+  @Output() btn_clean: EventEmitter<any> = new EventEmitter();
+
+  @Output() btn_close_modal: EventEmitter<any> = new EventEmitter();
+
+  closeModal() {
+    this.mostrarModal = false
+    this.btn_close_modal.emit();
   }
 
-  conf(A: string){
-    console.log('confirmado');
-  }
-
-  reset(R:string){
-    console.log('reset');
-    
-  }
-
-  mostrarModal = false ;
-
-  abrirModal(){
-    this.mostrarModal = true;
-  }
-
-  cerrarModal(){
-    this.mostrarModal = false;
-  }
 }
