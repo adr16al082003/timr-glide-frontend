@@ -8,6 +8,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { TablaComponent } from "./components/tabla/tabla.component";
 import { LayoutComponent } from './layout/layout.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,18 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { User } from './User';
-import { LoginService } from 'src/app/services/login.service';
+import { FormLogin } from './User';
+
 import { HttpClientModule } from '@angular/common/http';
-import Swal from 'sweetalert2';
-import { timer } from 'rxjs';
-import { AlertService } from 'src/app/services/alert.service';
 import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { AlertService } from 'src/app/services/alert.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   imports: [FormsModule, CommonModule, HttpClientModule],
-  providers: [LoginService],
+  providers: [AuthService],
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
@@ -20,16 +18,13 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginComponent {
 
-  ;
-  
-
-  login: User = {
+  login: FormLogin = {
     user: '',
     pass: '',
     recordar: false
   }
   constructor(
-    private loginService: LoginService, 
+    private authService: AuthService, 
     private _alertService: AlertService,
     private router: Router){ }
 
@@ -44,7 +39,7 @@ export class LoginComponent {
     }
 
   validateUser() {
-    this.loginService.validateUser(this.login).subscribe({
+    this.authService.validateUser(this.login).subscribe({
       next: (user:any) => {
         if( this.login.recordar){
           localStorage.setItem('recordar', JSON.stringify({
