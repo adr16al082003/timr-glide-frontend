@@ -17,7 +17,7 @@
 
   <div class="flex flex-column w-full">
     <!-- HEADER -->
-    <app-header></app-header>
+    <app-header (logout)="logout()" [user]="usuario" ></app-header>
     <!-- LAYOUT -->
     <section>
       <router-outlet></router-outlet>
