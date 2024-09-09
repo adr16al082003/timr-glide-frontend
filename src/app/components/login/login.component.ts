@@ -4,12 +4,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from 'src/app/services/auth.service';
 import { Login } from './User';
 
 @Component({
   imports: [FormsModule, CommonModule, HttpClientModule],
-  providers: [AuthService],
+  providers: [LoginService],
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
