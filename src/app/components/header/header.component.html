@@ -1,18 +1,18 @@
 <div class="flex justify-content-end bg-custom-primary-color p-2 pr-4">
   <div class="flex justify-content-end align-items-center gap-3">
     <div class="flex flex-column  align-items-end">
-      <span class="text-white text-base">Adrian Alayon</span>
-      <span class="text-white text-xs font-bold">Administrador</span>
+      <span class="text-white text-base">{{user.nombre}}</span>
+      <span class="text-white text-xs font-bold">{{user.cargo}}</span>
     </div>
     <div class="flex justify-content-end align-items-end gap-1">
       <!-- <div class="border-circle p-2 bg-black-alpha-70 text-xl	flex justify-content-center align-items-center">
         <span>AA</span>
       </div> -->
-      <details class="dropdown "  >
+      <details class="dropdown ">
         <summary></summary>
         <ul dir="rtl">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Logout</a></li>
+          <li> Perfil</li>
+          <li (click)="logout.emit()"> Salir </li>
         </ul>
       </details>
     </div>

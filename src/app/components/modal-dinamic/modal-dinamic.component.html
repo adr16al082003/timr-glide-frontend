@@ -1,20 +1,20 @@
-<dialog open>
-    <article data-theme="dark">
-        <header>
-            <button aria-label="Close" rel="prev"></button>
-            <p>
-                <strong>{{title}}</strong>
-            </p>
-        </header>
-        <div class="p-3">
-            <ng-content select="[modal-body]"></ng-content>
-        </div>
-        <footer>
-            <button (click)="btn_cerrar.emit()" class="bg-red-500">
-                Cancelar
-            </button>
-            <button class="bg-yellow-500" (click)="btn_clean.emit()">Descartar</button>
-            <button (click)="btn_conf.emit()">Confirmar</button>
-        </footer>
-    </article>
+<dialog [attr.open]="mostrarModal" open>
+  <article data-theme="dark">
+    <header>
+      <button (click)="closeModal()" aria-label="Close" rel="prev"></button>
+      <p>
+        <strong>{{title}}</strong>
+      </p>
+    </header>
+    <div class="p-3">
+      <ng-content select="[modal-body]"></ng-content>
+    </div>
+    <footer>
+      <button (click)="btn_cerrar.emit()" class="bg-red-500">
+        Cancelar
+      </button>
+      <button class="bg-yellow-500" (click)="btn_clean.emit()">Descartar</button>
+      <button (click)="btn_conf.emit()">Confirmar</button>
+    </footer>
+  </article>
 </dialog>
