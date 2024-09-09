@@ -1,5 +1,5 @@
 
-export interface User {
+export interface FormLogin {
     user: string,
     pass: string,
     recordar: boolean
