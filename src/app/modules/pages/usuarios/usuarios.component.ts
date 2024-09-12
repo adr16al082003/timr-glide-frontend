@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ModalDinamicComponent } from 'src/app/components/modal-dinamic/modal-dinamic.component';
+import { Usuario } from 'src/app/models/People.model';
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -26,4 +27,6 @@ export class UsuariosComponent {
     console.log('reset');
   
   }
+
+  user = new Usuario();
 }

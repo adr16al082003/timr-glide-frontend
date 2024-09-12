@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Colum } from '../models/configForms.model';
 import { menuDashboard } from './menu';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/auth.service';
 import { Usuario } from '../models/People.model';
 
 

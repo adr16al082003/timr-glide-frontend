@@ -24,3 +24,16 @@
   padding: 4px 8px;
 }
 
+/* "border-1 border-solid surface-border border-round outline-none focus:border-primary" */
+.custom-input{
+  width: 100%;
+  padding: 10px;
+  border-width:1px ;
+  border-style:solid ;
+  outline: none;
+ 
+}
+
+.custom-input:focus{
+  border-color: var(--custom-primary-color);
+}

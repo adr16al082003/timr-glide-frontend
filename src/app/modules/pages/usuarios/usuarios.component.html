@@ -1,5 +1,27 @@
 <app-modal-dinamic [mostrarModal]="true" (btn_cerrar)="close($event)" (btn_conf)="con($event)" (btn_clean)="reset($event)">
   <div modal-body>
-    <h1>esta es la proyeccion</h1>
+    <div class="formgrid grid">
+      <div class="field col">
+          <label for="nombre">Nombre</label>
+          <input class="custom-input" id="nombre" type="text" >
+      </div>
+      <div class="field col">
+          <label for="usuario">Usuario</label>
+          <input class="custom-input" id="usuario" type="text" >
+      </div>
+  </div>
+  <div class="formgrid grid">
+      <div class="field col">
+          <label for="clave">Clave</label>
+          <input class="custom-input" id="clave" type="text" >
+      </div>
+      <div class="field col">
+          <label  for="roles">Rol</label>
+          <select id="roles" class="custom-input h-3rem"  style="appearance: auto">
+              <option>Administrador</option>
+              <option>Operador</option>
+          </select>
+      </div>
+  </div>
   </div>
 </app-modal-dinamic>

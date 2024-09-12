@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { ModalDinamicComponent } from './components/modal-dinamic/modal-dinamic.component';
 import { TablaComponent } from './components/tabla/tabla.component';
 import { LayoutComponent } from './layout/layout.component';
-import { authGuard } from './auth.guard';
 
 
 export const AppRoutes: Routes = [
@@ -18,8 +18,7 @@ export const AppRoutes: Routes = [
   },
   { path: 'headerForm', component: TablaComponent },
 
-  { path: 'modal', component: ModalDinamicComponent }
-
+  { path: 'modal', component: ModalDinamicComponent },
 
 ];
 
