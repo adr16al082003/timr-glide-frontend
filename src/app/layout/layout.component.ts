@@ -3,6 +3,7 @@ import { Colum } from '../models/configForms.model';
 import { menuDashboard } from './menu';
 import { LoginService } from '../services/auth.service';
 import { Usuario } from '../models/People.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,10 +21,15 @@ export class LayoutComponent implements OnInit {
 
   }
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, 
+    private router:Router) { }
 
   logout(){
 
     this.loginService.logout()
+  }
+
+  navigate(url:string){
+    this.router.navigate([url]);
   }
 }

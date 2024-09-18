@@ -4,7 +4,7 @@ import { SamboxComponent } from "../sambox/sambox.component";
 import { Colum } from 'src/app/models/configForms.model';
 import { FormsModule } from '@angular/forms';
 import { HeaderFormComponent } from "../header-form/header-form.component";
-
+import { UsuariosComponent } from 'src/app/modules/pages/usuarios/usuarios.component';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { HeaderFormComponent } from "../header-form/header-form.component";
 })
 export class TablaComponent {
 
-  @Input() title: string = 'Titulo';
+  @Input() title: string = 'Usuarios';
 
   @Input() colums:  Colum[] = [new Colum()];
 
@@ -27,7 +27,4 @@ export class TablaComponent {
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
 
-  agregar(E:any){
-    console.log(E);
-  }
 }

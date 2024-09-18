@@ -10,10 +10,10 @@
       <ng-content select="[modal-body]"></ng-content>
     </div>
     <footer>
-      <button (click)="btn_cerrar.emit()" class="bg-red-500">
+      <button (click)="closeModal()" class="bg-red-500">
         Cancelar
       </button>
-      <button class="bg-yellow-500" (click)="btn_clean.emit()">Descartar</button>
+      <button class="bg-yellow-500" (click)="btn_descart.emit()">Descartar</button>
       <button (click)="btn_conf.emit()">Confirmar</button>
     </footer>
   </article>

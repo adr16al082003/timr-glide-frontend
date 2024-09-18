@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { AlertService } from 'src/app/services/alert.service';
+import { Access, Usuario } from 'src/app/models/People.model';
+import { UsuariosComponent } from 'src/app/modules/pages/usuarios/usuarios.component';
 @Component({
   imports: [CommonModule],
   standalone: true,
@@ -10,8 +11,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./modal-dinamic.component.css']
 })
 export class ModalDinamicComponent {
+  
 
-  @Input() mostrarModal = false;
+
+  constructor(
+    private alertService: AlertService
+  ) { }
+
+  @Input() mostrarModal: boolean = false;
+  @Output() mostrarModalChange: EventEmitter<boolean> = new EventEmitter();
 
   @Input() title: string = 'Registro de Usuario';
 
@@ -19,13 +27,15 @@ export class ModalDinamicComponent {
 
   @Output() btn_conf: EventEmitter<any> = new EventEmitter();
 
-  @Output() btn_clean: EventEmitter<any> = new EventEmitter();
+  @Output() btn_descart: EventEmitter<any> = new EventEmitter();
 
   @Output() btn_close_modal: EventEmitter<any> = new EventEmitter();
 
   closeModal() {
-    this.mostrarModal = false
+    this.mostrarModal = false;
+    this.mostrarModalChange.emit(this.mostrarModal);
     this.btn_close_modal.emit();
+    this.btn_cerrar.emit();
   }
 
 }

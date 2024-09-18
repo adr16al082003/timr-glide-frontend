@@ -8,6 +8,7 @@
 export class Usuario {
 	id: number= 0
 	nombre: string = ''
+	user: string = ''
 	clave: string = ''
 	cargo: string = ''
 	id_rol: number = 0

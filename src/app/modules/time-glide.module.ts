@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { LayoutRoutes } from './time-glide.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderFormComponent } from "../components/header-form/header-form.component";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     RouterModule.forChild(LayoutRoutes),
     TablaComponent,
-    ModalDinamicComponent
+    ModalDinamicComponent,
+    HeaderFormComponent
 ]
 })
 export class TimeGlideModule { }

@@ -1,6 +1,6 @@
 export const menuDashboard = [
   {
-    url: '',
+    url: 'app/usuarios',
     label: 'Usuarios',
     icon: 'bx bx-user-circle'
   },

@@ -1,10 +1,10 @@
-<app-header-form (btn_agg)="agregar($event)"></app-header-form>
 
-<div class=" flex flex-column shadow-6 w-7 border-round ">
-	<div class="flex bg-custom-primary-color align-items-center justify-content-between py-3 px-3 ">
+
+<div class=" flex flex-column shadow-6 w-8 border-round mt-3">
+	<div class="flex bg-gray-800 align-items-center justify-content-between py-1 px-3 ">
 		<p class="text-white text-4xl font-medium">{{title}}</p>
 		<div>
-			<input class="m-1 border-round-sm" type="search" placeholder="buscar">
+			<input class="m-1 border-round-sm" type="search" placeholder="buscar" >
 		</div>
 	</div>
 	<div class="flex flex-column py-2 px-3">
@@ -14,8 +14,8 @@
 			<h4>Acciones</h4>
 		</div>
 		<!-- BODY -->
-		<div *ngFor="let d of data" class="flex justify-content-between">
-			<p *ngFor="let colum of colums">{{d[colum.key]}}</p>
+		<div *ngFor="let d of data" class="flex justify-content-between ">
+			<p  *ngFor="let colum of colums">{{d[colum.key]}}</p>
 			<app-sambox (btn_delete)="delete.emit(d)" (btn_edit)="edit.emit(d)"></app-sambox>
 		</div>
 	</div>

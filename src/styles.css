@@ -4,8 +4,8 @@
 
 :root {
   --blanco: #E0E0E0;
-  --custom-primary-color-opacidad: #184463;
-  --custom-primary-color: #003053;
+  --custom-primary-color-opacidad: #ee4a4a;
+  --custom-primary-color: #d10a0a;
   --bg-body: #C7E1FF;
 }
 
@@ -31,7 +31,6 @@
   border-width:1px ;
   border-style:solid ;
   outline: none;
- 
 }
 
 .custom-input:focus{

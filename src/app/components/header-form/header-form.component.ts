@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModalDinamicComponent } from '../modal-dinamic/modal-dinamic.component';
 
 @Component({
   imports: [CommonModule],
@@ -13,8 +14,9 @@ export class HeaderFormComponent  {
 
   @Output() btn_agg: EventEmitter<any> = new EventEmitter();
   
+  
 agregar(E:any){
-  console.log(E);
+  console.log()
 }
 
 }
