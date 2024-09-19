@@ -1,7 +1,7 @@
 
 export interface Login {
     user: string,
-    pass: string,
+    clave: string,
     recordar: boolean
 }
 

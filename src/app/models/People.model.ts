@@ -8,10 +8,10 @@
 export class Usuario {
 	id: number= 0
 	nombre: string = ''
-	user: string = ''
+	usuario: string = ''
 	clave: string = ''
 	cargo: string = ''
-	id_rol: number = 0
+	id_rol: number = 2
 	permissions: Access = new Access()
 }
 

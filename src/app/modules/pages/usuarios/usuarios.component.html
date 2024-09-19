@@ -1,10 +1,10 @@
 <app-header-form (btn_agg)="agregar($event)"
     class="flex align-items-center justify-content-center min"></app-header-form>
-<app-tabla [colums]="labelTablaUser" [data]="dataTabla"
+<app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="update($event)"
     class="flex align-items-center justify-content-center"></app-tabla>
 
 
-<app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="con($event)" (btn_descart)="clean($event)">
+<app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="createUser()" (btn_descart)="clean()">
     <div modal-body>
             <div class="formgrid grid">
                 <div class="field col">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="field col">
                     <label for="usuario">Usuario</label>
-                    <input class="custom-input" id="usuario" type="text" [(ngModel)]="user.user">
+                    <input class="custom-input" id="usuario" type="text" [(ngModel)]="user.usuario">
                 </div>
             </div>
             <div class="formgrid grid">

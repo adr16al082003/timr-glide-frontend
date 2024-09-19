@@ -18,7 +18,7 @@ import { Login } from './User';
 export class LoginComponent {
   login: Login = {
     user: '',
-    pass: '',
+    clave: '',
     recordar: false
   }
   constructor(

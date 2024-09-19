@@ -18,7 +18,7 @@ export class TablaComponent {
 
   @Input() title: string = 'Usuarios';
 
-  @Input() colums:  Colum[] = [new Colum()];
+  @Input() colums: Colum[] = [new Colum()];
 
   @Input() data: any[] = [];
 
