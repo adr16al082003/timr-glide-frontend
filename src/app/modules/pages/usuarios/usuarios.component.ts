@@ -7,6 +7,7 @@ import { Colum } from 'src/app/models/configForms.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UsuarioService } from '../../services/user.service';
 import { AlertService } from 'src/app/services/alert.service';
+import { findIndex } from 'rxjs';
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -20,7 +21,7 @@ export class UsuariosComponent {
   constructor(
     private usuarioService: UsuarioService,
     private alertService: AlertService
-  ){}
+  ) { }
 
   user: Usuario = new Usuario();
 
@@ -45,12 +46,8 @@ export class UsuariosComponent {
     this.user = new Usuario();
   }
 
-  update(usuario:Usuario){
-    console.log(usuario)
-  }
 
-  
-  createUser(){
+  createUser() {
     this.usuarioService.createUser(this.user).subscribe({
       next: (data) => {
         console.log(data);
@@ -66,11 +63,11 @@ export class UsuariosComponent {
     });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.listUser();
   }
 
-  listUser(){
+  listUser() {
     this.usuarioService.listUser().subscribe({
       next: (data) => {
         this.dataTabla = data;
@@ -78,6 +75,40 @@ export class UsuariosComponent {
       error: (error) => {
         console.log(error);
       }
-  })
+    })
   }
+
+
+  asignarForm(usuario: Usuario) {
+    this.openModal = true;
+    this.user = usuario;
+  }
+
+  editUser() {
+    this.usuarioService.editUser(this.user).subscribe({
+      next: (data) => {
+        console.log(data);
+        const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === this.user.id);
+        this.dataTabla[userIndex] = this.user;
+        this.openModal = false;
+        this.alertService.exito('Usuario editado con exito')
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
+
+  asignarUsuario(){
+    if(this.user.id != 0){
+      this.editUser();
+    }else{
+      this.createUser();
+    }
+  }
+
+
+
 }
+
+

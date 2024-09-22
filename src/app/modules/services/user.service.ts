@@ -23,4 +23,8 @@ export class UsuarioService {
         return this.http.get<Usuario[]>(enviroment.host + '/api/obtener-usuario');
     }
 
+    editUser(user: Usuario): Observable<Usuario> {
+        return this.http.put<Usuario>(enviroment.host + '/api/update-user', user);
+    }
+
 }
