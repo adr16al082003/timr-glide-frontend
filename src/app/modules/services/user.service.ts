@@ -14,8 +14,8 @@ export class UsuarioService {
         private http: HttpClient,
     ) { }
 
-    createUser(user: Usuario): Observable<Usuario> {
-        return this.http.post<Usuario>(enviroment.host + '/api/crear-user', user);
+    createUser(user: Usuario): Observable<Usuario[]> {
+        return this.http.post<Usuario[]>(enviroment.host + '/api/crear-user', user);
     }
 
 
@@ -23,8 +23,12 @@ export class UsuarioService {
         return this.http.get<Usuario[]>(enviroment.host + '/api/obtener-usuario');
     }
 
-    editUser(user: Usuario): Observable<Usuario> {
-        return this.http.put<Usuario>(enviroment.host + '/api/update-user', user);
+    editUser(user: Usuario): Observable<Usuario[]> {
+        return this.http.put<Usuario[]>(enviroment.host + '/api/update-user', user);
+    }
+
+    deleteUser(user:Usuario): Observable<Usuario> {
+        return this.http.delete<Usuario>(enviroment.host + '/api/delete-user/'+ user.id);;
     }
 
 }

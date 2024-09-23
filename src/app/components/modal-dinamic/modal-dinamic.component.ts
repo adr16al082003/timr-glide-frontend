@@ -18,6 +18,8 @@ export class ModalDinamicComponent {
     private alertService: AlertService
   ) { }
 
+  @Input() view_descart: boolean = true;
+
   @Input() mostrarModal: boolean = false;
   @Output() mostrarModalChange: EventEmitter<boolean> = new EventEmitter();
 

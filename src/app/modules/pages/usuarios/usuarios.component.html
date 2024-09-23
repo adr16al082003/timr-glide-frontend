@@ -1,10 +1,10 @@
 <app-header-form (btn_agg)="agregar($event)"
     class="flex align-items-center justify-content-center min"></app-header-form>
-<app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)"
+<app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)" (delete)="deleteUser($event)"
     class="flex align-items-center justify-content-center"></app-tabla>
 
 
-<app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="createUser()" (btn_descart)="clean()">
+<app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="asignarUsuario()" (btn_descart)="clean()" [view_descart]="descartView" >
     <div modal-body>
             <div class="formgrid grid">
                 <div class="field col">
@@ -31,3 +31,6 @@
             </div>
     </div>
 </app-modal-dinamic>
+
+
+

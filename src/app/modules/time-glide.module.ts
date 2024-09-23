@@ -9,6 +9,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { LayoutRoutes } from './time-glide.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderFormComponent } from "../components/header-form/header-form.component";
+import { ToasDeleteComponent } from "../components/toas-delete/toas-delete.component";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HeaderFormComponent } from "../components/header-form/header-form.compo
     RouterModule.forChild(LayoutRoutes),
     TablaComponent,
     ModalDinamicComponent,
-    HeaderFormComponent
+    HeaderFormComponent,
+    ToasDeleteComponent
 ]
 })
 export class TimeGlideModule { }

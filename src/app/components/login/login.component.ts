@@ -17,7 +17,7 @@ import { Login } from './User';
 })
 export class LoginComponent {
   login: Login = {
-    user: '',
+    usuario: '',
     clave: '',
     recordar: false
   }
@@ -30,7 +30,7 @@ export class LoginComponent {
     if (localStorage.getItem('recordar')) {
       let user = JSON.parse(localStorage.getItem('recordar') as string);
 
-      this.login.user = user.user
+      this.login.usuario = user.usuario
       this.login.recordar = user.recordar
 
     }
@@ -41,7 +41,7 @@ export class LoginComponent {
       next: (user: any) => {
         if (this.login.recordar) {
           localStorage.setItem('recordar', JSON.stringify({
-            user: this.login.user,
+            usuario: this.login.usuario,
             recordar: this.login.recordar
           }));
         } else {

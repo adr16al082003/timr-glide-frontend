@@ -1,6 +1,6 @@
 
 export interface Login {
-    user: string,
+    usuario: string,
     clave: string,
     recordar: boolean
 }

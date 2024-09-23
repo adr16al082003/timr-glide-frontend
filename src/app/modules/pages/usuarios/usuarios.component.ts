@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { UsuarioService } from '../../services/user.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { findIndex } from 'rxjs';
+import { ToasDeleteComponent } from 'src/app/components/toas-delete/toas-delete.component';
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -15,6 +17,7 @@ import { findIndex } from 'rxjs';
 })
 export class UsuariosComponent {
 
+  descartView: boolean = true;
 
   openModal: boolean = false;
 
@@ -28,6 +31,7 @@ export class UsuariosComponent {
   /* funcion para abrir el modal con el boton + */
   agregar(E: any) {
     this.openModal = true;
+    this.descartView = true;
   }
 
 
@@ -52,7 +56,7 @@ export class UsuariosComponent {
       next: (data) => {
         console.log(data);
         this.clean();
-        this.dataTabla.push(data);
+        this.dataTabla.push(data[0]);
         this.openModal = false;
         this.alertService.exito('Usuario creadado con exito');
       },
@@ -82,6 +86,7 @@ export class UsuariosComponent {
   asignarForm(usuario: Usuario) {
     this.openModal = true;
     this.user = usuario;
+    this.descartView = false;
   }
 
   editUser() {
@@ -89,7 +94,7 @@ export class UsuariosComponent {
       next: (data) => {
         console.log(data);
         const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === this.user.id);
-        this.dataTabla[userIndex] = this.user;
+        this.dataTabla[userIndex] = data[0];
         this.openModal = false;
         this.alertService.exito('Usuario editado con exito')
       },
@@ -99,16 +104,30 @@ export class UsuariosComponent {
     });
   }
 
-  asignarUsuario(){
-    if(this.user.id != 0){
+  asignarUsuario() {
+    console.log(this.user);
+    if (this.user.id != 0) {
       this.editUser();
-    }else{
+    } else {
       this.createUser();
     }
   }
 
-
+  deleteUser(user:Usuario) {
+    this.usuarioService.deleteUser(user).subscribe({
+      next: (data) => {
+        console.log(data);
+        const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === user.id);
+        this.dataTabla.splice(userIndex, 1);
+        this.alertService.exito('Borrado exitosamente')
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
 
 }
+
 
 
