@@ -5,6 +5,7 @@ import { ModalDinamicComponent } from './components/modal-dinamic/modal-dinamic.
 import { TablaComponent } from './components/tabla/tabla.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ToasDeleteComponent } from './components/toas-delete/toas-delete.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 export const AppRoutes: Routes = [
@@ -20,7 +21,8 @@ export const AppRoutes: Routes = [
   { path: 'headerForm', component: TablaComponent },
 
   { path: 'modal', component: ModalDinamicComponent },
-  {path: 'toas', component: ToasDeleteComponent}
+  {path: 'toas', component: ToasDeleteComponent},
+  { path: 'tablaprueba', component: ModalComponent }
 
 ];
 

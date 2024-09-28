@@ -9,6 +9,7 @@ import { UsuarioService } from '../../services/user.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { findIndex } from 'rxjs';
 import { ToasDeleteComponent } from 'src/app/components/toas-delete/toas-delete.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuarios',
@@ -20,6 +21,8 @@ export class UsuariosComponent {
   descartView: boolean = true;
 
   openModal: boolean = false;
+
+  searchTerm = '';
 
   constructor(
     private usuarioService: UsuarioService,
@@ -44,12 +47,16 @@ export class UsuariosComponent {
     { label: 'Rol', key: 'cargo', visible: true },
   ]
 
+  /* propiedad para el cuerpo de la tabla */
   dataTabla: Usuario[] = []
+
+  /* metodo para el boton descartar */
 
   clean() {
     this.user = new Usuario();
   }
 
+  /* metodo para crear usuario */
 
   createUser() {
     this.usuarioService.createUser(this.user).subscribe({
@@ -71,6 +78,8 @@ export class UsuariosComponent {
     this.listUser();
   }
 
+  /* metodo para listar usuario en la tabla */
+
   listUser() {
     this.usuarioService.listUser().subscribe({
       next: (data) => {
@@ -82,12 +91,15 @@ export class UsuariosComponent {
     })
   }
 
+/* metodo para abrir modal de editar*/
 
   asignarForm(usuario: Usuario) {
     this.openModal = true;
     this.user = usuario;
     this.descartView = false;
   }
+
+  /* metodo para editar usuario */
 
   editUser() {
     this.usuarioService.editUser(this.user).subscribe({
@@ -104,6 +116,8 @@ export class UsuariosComponent {
     });
   }
 
+  /* metodo para crear o editar*/
+
   asignarUsuario() {
     console.log(this.user);
     if (this.user.id != 0) {
@@ -113,6 +127,7 @@ export class UsuariosComponent {
     }
   }
 
+  /*
   deleteUser(user:Usuario) {
     this.usuarioService.deleteUser(user).subscribe({
       next: (data) => {
@@ -125,7 +140,36 @@ export class UsuariosComponent {
         console.log(error);
       }
     });
+  } */
+
+
+  /*  Promesa de borrar usuario          */
+  deleteUser(user: Usuario) {
+    Swal.fire({
+      title: '¿Seguro que deseas eliminar?',
+      text: 'Esta acción es irreversible',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        return this.usuarioService.deleteUser(user).toPromise();
+      } else {
+        throw new Error('Eliminación cancelada');
+      }
+    }).then((data) => {
+      console.log(data);
+      const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === user.id);
+      this.dataTabla.splice(userIndex, 1);
+      Swal.fire('Eliminado con éxito', '', 'success');
+    }).catch((error) => {
+      console.log(error);
+      Swal.fire('Error al eliminar', '', 'error');
+    });
   }
+
+  
 
 }
 
