@@ -54,4 +54,20 @@ export class AlertService {
     });
   }
 
+  delete(
+    title: string,
+    text?: string,
+    icon: 'warning' = 'warning',
+    confirmButtonText: string = 'Eliminar',
+    cancelButtonText: string = 'Cancelar'): Promise<any>{
+    return Swal.fire({
+      title: '¿Seguro que deseas eliminar?',
+      text: 'Esta acción es irreversible',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
+  });
+}
+
 }

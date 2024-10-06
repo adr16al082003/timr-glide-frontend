@@ -91,7 +91,7 @@ export class UsuariosComponent {
     })
   }
 
-/* metodo para abrir modal de editar*/
+  /* metodo para abrir modal de editar*/
 
   asignarForm(usuario: Usuario) {
     this.openModal = true;
@@ -154,24 +154,19 @@ export class UsuariosComponent {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        return this.usuarioService.deleteUser(user).toPromise();
-      } else {
-        throw new Error('Eliminación cancelada');
+        this.usuarioService.deleteUser(user).subscribe({
+          next: (data) => {
+            console.log(data);
+            const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === user.id);
+            this.dataTabla.splice(userIndex, 1);
+            Swal.fire('Eliminado con éxito', '', 'success');
+          }, error: (error) => {
+            console.log(error);
+            Swal.fire('Error al eliminar', '', 'error');
+          }
+        });
       }
-    }).then((data) => {
-      console.log(data);
-      const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === user.id);
-      this.dataTabla.splice(userIndex, 1);
-      Swal.fire('Eliminado con éxito', '', 'success');
-    }).catch((error) => {
-      console.log(error);
-      Swal.fire('Error al eliminar', '', 'error');
     });
   }
-
-  
-
 }
-
-
 
