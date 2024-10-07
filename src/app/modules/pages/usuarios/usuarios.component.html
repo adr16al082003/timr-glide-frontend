@@ -1,36 +1,32 @@
 <app-header-form (btn_agg)="agregar($event)"
-    class="flex align-items-center justify-content-center min"></app-header-form>
+  class="flex align-items-center justify-content-center min"></app-header-form>
+
+<!-- TABLA DE USUARIOS -->
 <app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)" (delete)="deleteUser($event)"
-    class="flex align-items-center justify-content-center"></app-tabla>
+  class="flex align-items-center justify-content-center"></app-tabla>
 
-
-<app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="asignarUsuario()" (btn_descart)="clean()" [view_descart]="descartView"  >
-    <div modal-body>
-            <div class="formgrid grid">
-                <div class="field col">
-                    <label for="nombre">Nombre</label>
-                    <input class="custom-input" id="nombre" type="text" [(ngModel)]="user.nombre">
-                </div>
-                <div class="field col">
-                    <label for="usuario">Usuario</label>
-                    <input class="custom-input" id="usuario" type="text" [(ngModel)]="user.usuario">
-                </div>
-            </div>
-            <div class="formgrid grid">
-                <div class="field col">
-                    <label for="clave">Clave</label>
-                    <input class="custom-input" id="clave" type="password" [(ngModel)]="user.clave">
-                </div>
-                <div class="field col">
-                    <label for="roles">Rol</label>
-                    <select id="roles" class="custom-input h-3rem" style="appearance: auto" [(ngModel)]="user.cargo">
-                        <option>Administrador</option>
-                        <option>Operador</option>
-                    </select>
-                </div>
-            </div>
+<!-- MODAL DINAMICO -->
+<app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="asignarUsuario()" (btn_descart)="clean()"
+  [view_descart]="descartView">
+  <div modal-body>
+    <div class="formgrid grid">
+      <div class="field col">
+        <label for="nombre">Nombre</label>
+        <input class="custom-input" id="nombre" type="text" [(ngModel)]="user.nombre">
+      </div>
+      <div class="field col">
+        <label for="usuario">Usuario</label>
+        <input class="custom-input" id="usuario" type="text" [(ngModel)]="user.usuario">
+      </div>
     </div>
+    <div class="formgrid grid">
+      <div class="field col">
+        <label for="clave">Clave</label>
+        <input class="custom-input" id="clave" type="password" [(ngModel)]="user.clave">
+      </div>
+      <div class="field col">
+        <app-custom-dropdown [(ngModel)]="user.id_rol" label="Roles" [data]="permisos"></app-custom-dropdown>
+      </div>
+    </div>
+  </div>
 </app-modal-dinamic>
-
-
-

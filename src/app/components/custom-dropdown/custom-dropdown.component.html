@@ -1,0 +1,9 @@
+<label>{{label}}</label>
+<details class="dropdown">
+  <summary>{{labelValue??'Seleccionar'}}</summary>
+  <ul>
+    <li *ngFor="let item of data; let i = index" (click)="setValueSelect(item)">
+      <a>{{item.name}}</a>
+    </li>
+  </ul>
+</details>

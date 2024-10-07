@@ -9,7 +9,13 @@ import { ToasDeleteComponent } from "../toas-delete/toas-delete.component";
 
 
 @Component({
-  imports: [CommonModule, SamboxComponent, FormsModule, HeaderFormComponent, ToasDeleteComponent],
+  imports: [
+    CommonModule,
+    SamboxComponent,
+    FormsModule,
+    HeaderFormComponent,
+    ToasDeleteComponent
+  ],
   standalone: true,
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
@@ -17,7 +23,7 @@ import { ToasDeleteComponent } from "../toas-delete/toas-delete.component";
 })
 export class TablaComponent {
 
-  openToas: boolean = false 
+  openToas: boolean = false
 
   @Input() title: string = 'Usuarios';
 
@@ -31,7 +37,7 @@ export class TablaComponent {
 
 
 
-  Eliminar(E:any){
+  Eliminar(E: any) {
     console.log('si elimina')
   }
 

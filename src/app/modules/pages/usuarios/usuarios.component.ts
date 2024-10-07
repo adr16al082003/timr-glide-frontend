@@ -1,15 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { ModalDinamicComponent } from 'src/app/components/modal-dinamic/modal-dinamic.component';
-import { Usuario } from 'src/app/models/People.model';
-import { NgForm } from '@angular/forms';
-import { HeaderFormComponent } from 'src/app/components/header-form/header-form.component';
+import { Component } from '@angular/core';
 import { Colum } from 'src/app/models/configForms.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { UsuarioService } from '../../services/user.service';
+import { Usuario } from 'src/app/models/People.model';
 import { AlertService } from 'src/app/services/alert.service';
-import { findIndex } from 'rxjs';
-import { ToasDeleteComponent } from 'src/app/components/toas-delete/toas-delete.component';
 import Swal from 'sweetalert2';
+import { UsuarioService } from '../../services/user.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -23,6 +17,13 @@ export class UsuariosComponent {
   openModal: boolean = false;
 
   searchTerm = '';
+
+  permisos: { id: number | string, name: string }[] = [
+    { id: 1, name: 'Administrador' },
+    { id: 2, name: 'Usuario' },
+    { id: 3, name: 'Supervisor' },
+    { id: 4, name: 'Gerente' },
+  ]
 
   constructor(
     private usuarioService: UsuarioService,
