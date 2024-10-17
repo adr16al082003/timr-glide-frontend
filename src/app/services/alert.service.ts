@@ -23,7 +23,7 @@ export class AlertService {
 
   fails(title = "", text = ""){
     Swal.fire({
-      position: "top-end",
+      position: "center",
       icon: "error",
       title: title,
       text: text,

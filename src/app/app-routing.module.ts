@@ -20,7 +20,7 @@ export const AppRoutes: Routes = [
   },
   { path: 'headerForm', component: TablaComponent },
 
-  { path: 'modal', component: ModalDinamicComponent },
+  { path: 'modal', component: ModalComponent },
   {path: 'toas', component: ToasDeleteComponent},
   { path: 'tablaprueba', component: ModalComponent }
 

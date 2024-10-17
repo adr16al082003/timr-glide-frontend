@@ -1,44 +1,52 @@
-<table class=" flex flex-column shadow-6 w-8 border-round mt-3">
-    <thead>
-        <tr>
-            <th scope="col">Planet</th>
-            <th scope="col">Diameter (km)</th>
-            <th scope="col">Distance to Sun (AU)</th>
-            <th scope="col">Orbit (days)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">Mercury</th>
-            <td>4,880</td>
-            <td>0.39</td>
-            <td>88</td>
-        </tr>
-        <tr>
-            <th scope="row">Venus</th>
-            <td>12,104</td>
-            <td>0.72</td>
-            <td>225</td>
-        </tr>
-        <tr>
-            <th scope="row">Earth</th>
-            <td>12,742</td>
-            <td>1.00</td>
-            <td>365</td>
-        </tr>
-        <tr>
-            <th scope="row">Mars</th>
-            <td>6,779</td>
-            <td>1.52</td>
-            <td>687</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th scope="row">Average</th>
-            <td>9,126</td>
-            <td>0.91</td>
-            <td>341</td>
-        </tr>
-    </tfoot>
-</table>
+
+<div class="formgrid grid">
+    <div class="field col">
+        <label for="nombre">Nombre</label>
+        <input class="custom-input" id="nombre" type="text" required>
+    </div>
+    <div class="field col">
+        <label for="identificacion">Identificación</label>
+        <input class="custom-input" id="identificacion" type="text">
+    </div>
+</div>
+<p>Nacionalidad</p>
+<div class="formgroup-inline">
+    <div class="field-radiobutton">
+        <input type="radio" id="identificacion_iso" name="identificacion_iso" value="e">
+        <label for="identificacion_iso">E</label>
+    </div>
+    <div class="field-radiobutton">
+        <input type="radio" id="identificacion_iso" name="identificacion_iso" value="v">
+        <label for="identificacion_iso">V</label>
+    </div>
+</div>
+<div class="formgrid grid">
+    <div class="field col">
+        <label for="telefono">Teléfono</label>
+        <input class="custom-input" id="telefono" type="tel">
+    </div>
+    <div class="field col">
+        <label for="direcciones">Dirección</label>
+        <input class="custom-input" id="direcciones" type="text">
+    </div>
+</div>
+<p>Género</p>
+<div class="formgroup-inline">
+    <div class="field-radiobutton">
+        <input type="radio" id="genero" name="genero" value="m">
+        <label for="genero">M</label>
+    </div>
+    <div class="field-radiobutton">
+        <input type="radio" id="genero" name="genero" value="f">
+        <label for="genero">F</label>
+    </div>
+</div>
+<p>Parroquia</p>
+<div class="formgroup-inline">
+    <div class="field-radiobutton">
+        <input type="radio" id="id_parroquia" name="id_parroquia" value="1">
+        <label for="id_parroquia">1</label>
+    </div>
+    <div class="field-radiobutton">
+        <input type="radio" id="id_parroquia" name="id_parroquia" value="2">
+        <label for="id_parroquia">2</label>

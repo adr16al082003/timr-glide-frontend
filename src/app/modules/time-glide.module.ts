@@ -13,6 +13,7 @@ import { ToasDeleteComponent } from "../components/toas-delete/toas-delete.compo
 import { CustomDropdownComponent } from "../components/custom-dropdown/custom-dropdown.component";
 
 
+
 @NgModule({
   declarations: [
     UsuariosComponent,

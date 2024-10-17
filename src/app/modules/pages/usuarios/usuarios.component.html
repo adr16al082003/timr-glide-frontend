@@ -9,10 +9,11 @@
 <app-modal-dinamic [(mostrarModal)]="openModal" (btn_conf)="asignarUsuario()" (btn_descart)="clean()"
   [view_descart]="descartView">
   <div modal-body>
-    <div class="formgrid grid">
+    <p>Id: {{user.id}}</p>
+    <div class="formgrid grid" >
       <div class="field col">
         <label for="nombre">Nombre</label>
-        <input class="custom-input" id="nombre" type="text" [(ngModel)]="user.nombre">
+        <input class="custom-input" id="nombre" type="text" required="" [(ngModel)]="user.nombre">
       </div>
       <div class="field col">
         <label for="usuario">Usuario</label>
@@ -24,6 +25,12 @@
         <label for="clave">Clave</label>
         <input class="custom-input" id="clave" type="password" [(ngModel)]="user.clave">
       </div>
+      <div class="field col">
+        <label for="clave">Confirmar clave</label>
+        <input class="custom-input" id="clave" type="password" [(ngModel)]="user.clave2">
+      </div>
+    </div>
+      <div class="formgrid grid">
       <div class="field col">
         <app-custom-dropdown [(ngModel)]="user.id_rol" label="Roles" [data]="permisos"></app-custom-dropdown>
       </div>

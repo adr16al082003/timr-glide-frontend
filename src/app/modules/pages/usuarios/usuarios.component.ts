@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/models/People.model';
 import { AlertService } from 'src/app/services/alert.service';
 import Swal from 'sweetalert2';
 import { UsuarioService } from '../../services/user.service';
+import { LoginService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -16,6 +17,7 @@ export class UsuariosComponent {
 
   openModal: boolean = false;
 
+
   searchTerm = '';
 
   permisos: { id: number | string, name: string }[] = [
@@ -27,13 +29,15 @@ export class UsuariosComponent {
 
   constructor(
     private usuarioService: UsuarioService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private auth: LoginService
   ) { }
 
   user: Usuario = new Usuario();
 
   /* funcion para abrir el modal con el boton + */
   agregar(E: any) {
+    this.user = new Usuario();
     this.openModal = true;
     this.descartView = true;
   }
@@ -57,9 +61,48 @@ export class UsuariosComponent {
     this.user = new Usuario();
   }
 
+  validateUser(): boolean {
+    if (this.user.nombre.trim() === '') {
+      this.alertService.fails('El nombre de usuario es obligatorio');
+      return true;
+    }if(this.user.usuario.trim() === ''){
+      this.alertService.fails('El usuario es obligatorio');
+      return true;
+    }if(this.user.clave.trim()=== ''){
+      this.alertService.fails('La clave es obligatoria')
+      return true;
+    }if(this.user.cargo){
+      this.alertService.fails('El rol es obligatorio');
+      return true;
+    }
+    return false;
+  }
+
+/**
+ * 
+ * metodo para confirmar contraseña
+ */
+  veryPass(userClave: Usuario): boolean{
+    if(userClave.clave != userClave.clave2){
+      this.alertService.fails('La contraseña no coincide');
+      return true;
+    }
+    return false;
+  }
+
+
   /* metodo para crear usuario */
 
   createUser() {
+
+    if (this.validateUser()){
+      return;
+    }
+    
+    if(this.veryPass(this.user)){
+      return;
+    }
+
     this.usuarioService.createUser(this.user).subscribe({
       next: (data) => {
         console.log(data);
@@ -74,6 +117,9 @@ export class UsuariosComponent {
       }
     });
   }
+
+    
+
 
   ngOnInit() {
     this.listUser();
@@ -103,6 +149,10 @@ export class UsuariosComponent {
   /* metodo para editar usuario */
 
   editUser() {
+    if(this.veryPass(this.user)){
+      return;
+    }
+    
     this.usuarioService.editUser(this.user).subscribe({
       next: (data) => {
         console.log(data);
@@ -128,32 +178,30 @@ export class UsuariosComponent {
     }
   }
 
-  /*
-  deleteUser(user:Usuario) {
-    this.usuarioService.deleteUser(user).subscribe({
-      next: (data) => {
-        console.log(data);
-        const userIndex = this.dataTabla.findIndex(Usuario => Usuario.id === user.id);
-        this.dataTabla.splice(userIndex, 1);
-        this.alertService.exito('Borrado exitosamente')
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
-  } */
-
+/**
+ * metodo para validar usuario 
+ */
+  notDeleteUser(userTable: Usuario): boolean{
+    let pass : boolean = false;
+    
+    if(userTable.id ===  this.auth.getUser().id){
+      this.alertService.fails('No puedes eliminar tu propio usuario');
+      pass = true;
+    }
+    if(userTable.id === 1){
+      this.alertService.fails('No puedes eliminar el Usuario Master');
+      pass = true;
+    }
+    return pass;
+  }
 
   /*  Promesa de borrar usuario          */
-  deleteUser(user: Usuario) {
-    Swal.fire({
-      title: '¿Seguro que deseas eliminar?',
-      text: 'Esta acción es irreversible',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+  deleteUser(user: Usuario){
+    if(this.notDeleteUser(user)){
+      return
+    }
+
+    this.alertService.delete('Seguro que desea eliminar?' , 'esta accion es irreversible ').then((result) => {
       if (result.isConfirmed) {
         this.usuarioService.deleteUser(user).subscribe({
           next: (data) => {
@@ -169,5 +217,8 @@ export class UsuariosComponent {
       }
     });
   }
+
+
+
 }
 

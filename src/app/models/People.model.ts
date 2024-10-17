@@ -10,6 +10,7 @@ export class Usuario {
 	nombre: string = ''
 	usuario: string = ''
 	clave: string = ''
+	clave2: string = ''
 	cargo: string = ''
 	id_rol: number = 0
 	permissions: Access = new Access()
