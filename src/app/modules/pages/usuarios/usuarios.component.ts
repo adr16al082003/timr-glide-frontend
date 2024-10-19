@@ -17,14 +17,9 @@ export class UsuariosComponent {
 
   openModal: boolean = false;
 
-
-  searchTerm = '';
-
   permisos: { id: number | string, name: string }[] = [
     { id: 1, name: 'Administrador' },
-    { id: 2, name: 'Usuario' },
-    { id: 3, name: 'Supervisor' },
-    { id: 4, name: 'Gerente' },
+    { id: 2, name: 'Recepcionista' },
   ]
 
   constructor(

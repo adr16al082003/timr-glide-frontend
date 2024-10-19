@@ -6,7 +6,8 @@ export class Cliente extends City{
     identificacion: string = '';
     identificacion_iso: 'V' | 'E' = 'V' ;
     telefonos: number[] = [];
-    direccion: string[] = [];
+    direcciones: string[] = [];
     genero: 'H'| 'M' = 'H'  ;
+    override id_parroquia: number = 0;
 }
 

@@ -11,13 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderFormComponent } from "../components/header-form/header-form.component";
 import { ToasDeleteComponent } from "../components/toas-delete/toas-delete.component";
 import { CustomDropdownComponent } from "../components/custom-dropdown/custom-dropdown.component";
-
+import { ClientesComponent } from './pages/clientes/clientes.component';
 
 
 @NgModule({
   declarations: [
     UsuariosComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClientesComponent
   ],
   imports: [
     HttpClientModule,

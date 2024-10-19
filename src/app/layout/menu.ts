@@ -5,7 +5,7 @@ export const menuDashboard = [
     icon: 'bx bx-user-circle'
   },
   {
-    url: '',
+    url: 'app/clientes',
     label: 'Clientes',
     icon: 'bx bx-user-voice'
   },
