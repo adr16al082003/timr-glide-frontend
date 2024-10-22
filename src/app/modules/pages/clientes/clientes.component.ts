@@ -88,10 +88,9 @@ export class ClientesComponent {
     if (this.validarCliente()) {
       return;
       }
+
+      console.log(this.customer)
       
-    if (this.validarCliente()) {
-      return;
-    }
 
     this.customeService.createCustomer(this.customer).subscribe({
       next: (data) => {

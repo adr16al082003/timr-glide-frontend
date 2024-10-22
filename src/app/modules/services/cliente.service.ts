@@ -21,7 +21,7 @@ export class ClienteService {
      * @returns 
      */
     createCustomer(customer: Cliente):Observable<Cliente[]>{
-        return this.http.post<Cliente[]>(enviroment.host + '/api/crear-cliente' , Cliente)
+        return this.http.post<Cliente[]>(enviroment.host + '/api/crear-cliente' , customer)
     }
 
     /**

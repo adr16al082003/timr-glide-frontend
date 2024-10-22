@@ -4,7 +4,7 @@
 <app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)" (delete)="deleteCustomer($event)"
     class="flex align-items-center justify-content-center"></app-tabla>
 
-<app-modal-dinamic [(mostrarModal)]="openModal" [view_descart]="descartView" (btn_conf)="assignCustomer()" (btn_descart)="clean()" >
+<app-modal-dinamic title="Clientes" [(mostrarModal)]="openModal" [view_descart]="descartView" (btn_conf)="assignCustomer()" (btn_descart)="clean()" >
     <div modal-body>
         <div class="formgrid grid">
             <div class="field col ">
@@ -42,12 +42,12 @@
         <p class="text-color">Género</p>
         <div class="formgroup-inline">
             <div class="field-radiobutton">
-                <input type="radio" id="genero" name="genero" value="m" [(ngModel)]="customer.genero">
-                <label class="text-color" for="genero">H</label>
+                <input type="radio" id="hombre" name="genero" value="m" [(ngModel)]="customer.genero">
+                <label class="text-color" for="hombre">H</label>
             </div>
             <div class="field-radiobutton">
-                <input type="radio" id="genero" name="genero" value="f" [(ngModel)]="customer.genero">
-                <label class="text-color" for="genero">M</label>
+                <input type="radio" id="mujer" name="genero" value="f" [(ngModel)]="customer.genero">
+                <label class="text-color" for="mujer">M</label>
             </div>
         </div>
         <app-custom-dropdown label="Parroquia" [(ngModel)]="customer.id_parroquia"
