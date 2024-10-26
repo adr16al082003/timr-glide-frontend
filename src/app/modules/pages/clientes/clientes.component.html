@@ -1,8 +1,7 @@
 <app-header-form (btn_agg)="agregar($event)"
 	class="flex align-items-center justify-content-center min"></app-header-form>
 
-<app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)" (delete)="deleteCustomer($event)"
-	class="flex align-items-center justify-content-center"></app-tabla>
+<app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)" (delete)="deleteCustomer($event)"></app-tabla>
 
 <app-modal-dinamic title="Clientes" [(mostrarModal)]="openModal" [view_descart]="descartView"
 	(btn_conf)="assignCustomer()" (btn_descart)="clean()" [view_descart]="descartView">

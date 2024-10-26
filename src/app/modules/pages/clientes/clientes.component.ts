@@ -44,10 +44,8 @@ export class ClientesComponent {
     { label: 'Id', key: 'id', visible: true },
     { label: 'Nombre', key: 'nombre', visible: true },
     { label: 'Identificacion', key: 'identificacion', visible: true },
-    { label: 'Nacionalidad', key: 'identificacion_iso', visible: true },
     { label: 'Telefono', key: 'telefonos', visible: true },
     { label: 'Direccion', key: 'direcciones', visible: true },
-    { label: 'Genero', key: 'genero', visible: true },
     { label: 'Parroquia', key: 'id_parroquia', visible: true },
   ]
 
