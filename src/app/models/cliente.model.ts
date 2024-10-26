@@ -7,7 +7,7 @@ export class Cliente extends City{
     nombre: string = '';
     identificacion: string = '';
     identificacion_iso: 'V' | 'E' = 'V' ;
-    telefonos: number[] = [];
+    telefonos: string = '';
     direcciones: string = '' ;
     genero: 'H'| 'M' = 'H'  ;
 

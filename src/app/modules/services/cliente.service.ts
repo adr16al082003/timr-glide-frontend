@@ -20,8 +20,8 @@ export class ClienteService {
      * crear clientes
      * @returns 
      */
-    createCustomer(customer: Cliente):Observable<Cliente[]>{
-        return this.http.post<Cliente[]>(enviroment.host + '/api/crear-cliente' , customer)
+    createCustomer(customer: Cliente):Observable<Cliente>{
+        return this.http.post<Cliente>(enviroment.host + '/api/crear-cliente' , customer)
     }
 
     /**
@@ -38,8 +38,8 @@ export class ClienteService {
      * @param customer 
      * @returns 
      */
-    editCustomer(customer:Cliente):Observable<Cliente[]>{
-        return this.http.put<Cliente[]>(enviroment.host + '/api/update-cliente', customer)
+    editCustomer(customer:Cliente):Observable<Cliente>{
+        return this.http.put<Cliente>(enviroment.host + '/api/update-cliente', customer)
     }
 
     deleteCustomer(customer:Cliente):Observable<Cliente>{

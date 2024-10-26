@@ -1,57 +1,57 @@
 <app-header-form (btn_agg)="agregar($event)"
-    class="flex align-items-center justify-content-center min"></app-header-form>
+	class="flex align-items-center justify-content-center min"></app-header-form>
 
 <app-tabla [colums]="labelTablaUser" [data]="dataTabla" (edit)="asignarForm($event)" (delete)="deleteCustomer($event)"
-    class="flex align-items-center justify-content-center"></app-tabla>
+	class="flex align-items-center justify-content-center"></app-tabla>
 
-<app-modal-dinamic title="Clientes" [(mostrarModal)]="openModal" [view_descart]="descartView" (btn_conf)="assignCustomer()" (btn_descart)="clean()" 
-[view_descart]="descartView">
-    <div modal-body>
-        <div class="formgrid grid">
-            <div class="field col ">
-                <label class="text-color" for="nombre">Nombre</label>
-                <input class="custom-input" id="nombre" type="text" required [(ngModel)]="customer.nombre">
-            </div>
-            <div class="field col">
-                <label class="text-color" for="identificacion">Identificación</label>
-                <input class="custom-input" id="identificacion" type="text" [(ngModel)]="customer.identificacion">
-            </div>
-        </div>
-        <p class="text-color">Nacionalidad</p>
-        <div class="formgroup-inline">
-            <div class="field-radiobutton">
-                <input type="radio" id="identificacion_iso" name="identificacion_iso" value="e"
-                    [(ngModel)]="customer.identificacion_iso">
-                <label class="text-color" for="identificacion_iso">E</label>
-            </div>
-            <div class="field-radiobutton">
-                <input type="radio" id="identificacion_iso" name="identificacion_iso" value="v"
-                    [(ngModel)]="customer.identificacion_iso">
-                <label class="text-color" for="identificacion_iso">V</label>
-            </div>
-        </div>
-        <div class="formgrid grid">
-            <div class="field col ">
-                <label class="text-color" for="telefonos">Teléfono</label>
-                <input class="custom-input" id="telefonos" type="tel" [(ngModel)]="customer.telefonos">
-            </div>
-            <div class="field col">
-                <label class="text-color" for="direcciones">Dirección</label>
-                <input class="custom-input" id="direcciones" type="text" [(ngModel)]="customer.direcciones">
-            </div>
-        </div>
-        <p class="text-color">Género</p>
-        <div class="formgroup-inline">
-            <div class="field-radiobutton">
-                <input type="radio" id="hombre" name="genero" value="m" [(ngModel)]="customer.genero">
-                <label class="text-color" for="hombre">H</label>
-            </div>
-            <div class="field-radiobutton">
-                <input type="radio" id="mujer" name="genero" value="f" [(ngModel)]="customer.genero">
-                <label class="text-color" for="mujer">M</label>
-            </div>
-        </div>
-        <app-custom-dropdown label="Parroquia" [(ngModel)]="customer.id_parroquia"
-            [data]="parroquia_iso"></app-custom-dropdown>
-    </div>
+<app-modal-dinamic title="Clientes" [(mostrarModal)]="openModal" [view_descart]="descartView"
+	(btn_conf)="assignCustomer()" (btn_descart)="clean()" [view_descart]="descartView">
+	<div modal-body>
+		<div class="formgrid grid">
+			<div class="field col ">
+				<label class="text-color" for="nombre">Nombre</label>
+				<input class="custom-input" id="nombre" type="text" required [(ngModel)]="customer.nombre">
+			</div>
+			<div class="field col">
+				<label class="text-color" for="identificacion">Identificación</label>
+				<input class="custom-input" id="identificacion" type="text" [(ngModel)]="customer.identificacion">
+			</div>
+		</div>
+		<p class="text-color">Nacionalidad</p>
+		<div class="formgroup-inline">
+			<div class="field-radiobutton">
+				<input type="radio" id="identificacion_iso" name="identificacion_iso" value="e"
+					[(ngModel)]="customer.identificacion_iso">
+				<label class="text-color" for="identificacion_iso">E</label>
+			</div>
+			<div class="field-radiobutton">
+				<input type="radio" id="identificacion_iso" name="identificacion_iso" value="v"
+					[(ngModel)]="customer.identificacion_iso">
+				<label class="text-color" for="identificacion_iso">V</label>
+			</div>
+		</div>
+		<div class="formgrid grid">
+			<div class="field col ">
+				<label class="text-color" for="telefonos">Teléfono</label>
+				<input class="custom-input" id="telefonos" type="tel" [(ngModel)]="customer.telefonos">
+			</div>
+			<div class="field col">
+				<label class="text-color" for="direcciones">Dirección</label>
+				<input class="custom-input" id="direcciones" type="text" [(ngModel)]="customer.direcciones">
+			</div>
+		</div>
+		<p class="text-color">Género</p>
+		<div class="formgroup-inline">
+			<div class="field-radiobutton">
+				<input type="radio" id="hombre" name="genero" value="m" [(ngModel)]="customer.genero">
+				<label class="text-color" for="hombre">H</label>
+			</div>
+			<div class="field-radiobutton">
+				<input type="radio" id="mujer" name="genero" value="f" [(ngModel)]="customer.genero">
+				<label class="text-color" for="mujer">M</label>
+			</div>
+		</div>
+		<app-custom-dropdown label="Parroquia" [(ngModel)]="customer.id_parroquia"
+			[data]="parroquia_iso"></app-custom-dropdown>
+	</div>
 </app-modal-dinamic>

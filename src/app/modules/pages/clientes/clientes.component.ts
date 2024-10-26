@@ -92,10 +92,10 @@ export class ClientesComponent {
     this.customeService.createCustomer(this.customer).subscribe({
       next: (data) => {
         console.log(data);
-        this.clean();
-        this.dataTabla.push(data[0]);
-        this.openModal = false;
+        this.dataTabla.push(data);
         this.alertService.exito('Cliente creado con exito');
+        this.clean();
+        this.openModal = false;
       },
       error: (error) => {
         console.log(error);
@@ -137,9 +137,9 @@ export class ClientesComponent {
   editCustomer() {
     this.customeService.editCustomer(this.customer).subscribe({
       next: (data) => {
-        console.log(data);
+        
         const customerIndex = this.dataTabla.findIndex(Cliente => Cliente.id === this.customer.id);
-        this.dataTabla[customerIndex] = data[0];
+        this.dataTabla[customerIndex] = data;
         this.openModal = false;
         this.alertService.exito('Cliente editado con exito');
       },
