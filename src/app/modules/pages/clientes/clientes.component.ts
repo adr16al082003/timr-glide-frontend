@@ -34,7 +34,7 @@ export class ClientesComponent {
   agregar(e: any) {
     this.customer = new Cliente();
     this.openModal = true;
-    this.descartView = true
+    this.descartView = true;
   }
 
   /**
@@ -88,9 +88,6 @@ export class ClientesComponent {
     if (this.validarCliente()) {
       return;
       }
-
-      console.log(this.customer)
-      
 
     this.customeService.createCustomer(this.customer).subscribe({
       next: (data) => {
