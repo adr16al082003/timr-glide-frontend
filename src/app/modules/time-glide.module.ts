@@ -12,13 +12,15 @@ import { HeaderFormComponent } from "../components/header-form/header-form.compo
 import { ToasDeleteComponent } from "../components/toas-delete/toas-delete.component";
 import { CustomDropdownComponent } from "../components/custom-dropdown/custom-dropdown.component";
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { RolesComponent } from './pages/roles/roles.component';
 
 
 @NgModule({
   declarations: [
     UsuariosComponent,
     DashboardComponent,
-    ClientesComponent
+    ClientesComponent,
+    RolesComponent,
   ],
   imports: [
     HttpClientModule,

@@ -15,6 +15,11 @@ export const menuDashboard = [
     icon: 'bx bx-group'
   },
   {
+    url: 'app/roles',
+    label: 'Permisos',
+    icon: 'bx bx-lock-alt'
+  },
+  {
     url: '',
     label: 'Reportes',
     icon: 'bx bxs-report'
