@@ -82,6 +82,11 @@ export class ClientesComponent {
 
   }
 
+  /**
+   *  metodo para agregar cliente
+   * @returns 
+   */
+
   createCustomer() {
     if (this.validarCliente()) {
       return;

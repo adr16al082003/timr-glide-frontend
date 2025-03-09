@@ -1,1 +1,41 @@
+<app-header-form (btn_agg)="agregar($event)"
+    class="flex align-items-center justify-content-center min"></app-header-form>
 
+<app-tabla title="Roles" [colums]="labelTablaRoles"></app-tabla>
+
+<app-modal-dinamic title="Roles" [(mostrarModal)]="openModal" [view_descart]="descartView" (btn_descart)="clean()"
+(btn_conf)="craeteRol()">
+    <div modal-body>
+        <div class="formgrid grid">
+            <div class="field col-12 ">
+                <label class="text-color" for="nombre">Nombre</label>
+                <input class="custom-input" id="nombre" type="text" required [(ngModel)]="permission.nombre">
+            </div>
+        </div>
+        <div class="formgrid grid" *ngFor=" let module of permission.modules">
+            <div class="col-12">
+                <details>
+                    <summary role="button" class="secondary">{{module.name}}</summary >
+                    <div class="flex gap-3 justify-content-start align-items-start">
+                        <label>
+                            <input type="checkbox" name=""  [(ngModel)]="module.view"/>
+                            Ver
+                        </label>
+                        <label>
+                            <input type="checkbox" name=""  [(ngModel)]="module.create"/>
+                            Crear
+                        </label>
+                        <label>
+                            <input type="checkbox" name=""  [(ngModel)]="module.update"/>
+                            Actualizar
+                        </label>
+                        <label>
+                            <input type="checkbox" name=""  [(ngModel)]="module.delete"/>
+                            Eliminar
+                        </label>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</app-modal-dinamic>

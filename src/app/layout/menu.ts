@@ -10,7 +10,7 @@ export const menuDashboard = [
     icon: 'bx bx-user-voice'
   },
   {
-    url: '',
+    url: 'app/reuniones',
     label: 'Reuniones',
     icon: 'bx bx-group'
   },
