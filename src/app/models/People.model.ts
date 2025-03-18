@@ -27,6 +27,7 @@ export class Access {
 	nombre: string = ''
 	modules: Modules[] = [
 		{
+			id: 0 ,
 			name: 'Usuario',
 			view: false,
 			create: false,
@@ -35,6 +36,7 @@ export class Access {
 		},
 
 		{
+			id: 0 ,
 			name: 'Clientes',
 			view: false,
 			create: false,
@@ -43,6 +45,7 @@ export class Access {
 		},
 
 		{
+			id: 0 ,
 			name: 'Reuniones',
 			view: false,
 			create: false,
@@ -51,6 +54,7 @@ export class Access {
 		},
 
 		{
+			id: 0 ,
 			name: 'Permisos',
 			view: false,
 			create: false,
@@ -59,6 +63,7 @@ export class Access {
 		},
 
 		{
+			id: 0 ,
 			name: 'Reporte',
 			view: false,
 			create: false,
@@ -70,6 +75,7 @@ export class Access {
 }
 
 export interface Modules {
+	id: number,
 	name: string,
 	create: boolean,
 	update: boolean,

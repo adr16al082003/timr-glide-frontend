@@ -1,11 +1,11 @@
 <div class="flex">
   <!--MENU LATERAL-->
-   <div class="flex flex-column gap-2 bg-custom-primary-color config-sidebar">
-     
+  <div class="flex flex-column gap-2 bg-custom-primary-color config-sidebar">
+
     <div class="flex justify-content-center pt-4">
       <i class='bx bx-menu text-3xl'></i>
     </div>
-       
+
     <div>
       <div *ngFor="let menu of menus " (click)="navigate(menu.url)"
         class="action-sidebar  flex flex-column text-center align-content-center justify-content-center gap-2 ">
@@ -13,13 +13,13 @@
         <span style="font-size: 10px;" class="font-bold">{{menu.label|uppercase}}</span>
       </div>
     </div>
-  </div> 
+  </div>
 
-  <div class="flex flex-column w-full "      >
-    <app-header (logout)="logout()" [user]="usuario" ></app-header>
+  <div class="flex flex-column w-full ">
+    <app-header (logout)="logout()" [user]="usuario"></app-header>
     <!-- HEADER -->
     <!-- LAYOUT -->
-    <section class="p-3 m-0 "   >
+    <section class="p-3 m-0 ">
       <router-outlet></router-outlet>
     </section>
   </div>
