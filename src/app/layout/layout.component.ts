@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Colum } from '../models/configForms.model';
-import { menuDashboard } from './menu';
+import { menuDashboard, MenuItem } from './menu';
 import { LoginService } from '../services/auth.service';
 import { Modules, Usuario } from '../models/People.model';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class LayoutComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
-  menus: any[] = []
+  menus: MenuItem[] = []
   ngOnInit(): void {
     this.menus = menuDashboard
     this.usuario = this.loginService.getUser();
@@ -45,5 +45,7 @@ export class LayoutComponent implements OnInit {
       return { ...item, ...perm };
     });
 
+    console.log(this.menus);
+    
   }
 }

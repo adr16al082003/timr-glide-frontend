@@ -1,41 +1,64 @@
-export const menuDashboard = [
+export interface MenuItem {
+  id: number;
+  view: boolean;
+  url: string;
+  name: string;
+  icon: string;
+  create: boolean;
+  update: boolean;
+  delete: boolean
+}
+
+
+export const menuDashboard: MenuItem[] = [
   {
-    id:1,
-    view:false,
+    id: 1,
+    view: false,
     url: 'app/usuarios',
-    label: 'Usuarios',
+    name: 'Usuarios',
     icon: 'bx bx-user-circle',
+    create: false,
+    update: false,
+    delete: false
   },
   {
-    
-    id:2,
-    view:false,
+    id: 2,
+    view: false,
     url: 'app/clientes',
-    label: 'Clientes',
+    name: 'Clientes',
     icon: 'bx bx-user-voice',
+    create: false,
+    update: false,
+    delete: false
   },
   {
-    
-    id:3,
-    view:false,
+    id: 3,
+    view: false,
     url: 'app/reuniones',
-    label: 'Reuniones',
+    name: 'Reuniones',
     icon: 'bx bx-group',
+    create: false,
+    update: false,
+    delete: false
   },
   {
-    
-    id:4,
-    view:false,
+    id: 4,
+    view: false,
     url: 'app/roles',
-    label: 'Permisos',
+    name: 'Permisos',
     icon: 'bx bx-lock-alt',
+    create: false,
+    update: false,
+    delete: false
   },
   {
-    
-    id:5,
-    view:false,
+    id: 5,
+    view: false,
     url: '',
-    label: 'Reportes',
+    name: 'Reportes',
     icon: 'bx bxs-report',
-  }
+    create: false,
+    update: false,
+    delete: false
+  }
 ]
